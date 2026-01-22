@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Parallax Car Detailing</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<nav>
+    <div class="logo">DETAILING STUDIO</div>
+    <ul>
+        <li><a href="#home">Home</a></li>
+        <li><a href="#services">Services</a></li>
+        <li><a href="#about">About Us</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+<div id="home" class="hero" style="background-color: rgb(255, 255, 255);">
+    <img src="public/ppp.png" class="car" id="car">
+    <div class="hero-text">CAR   DETAILING  STUDIO
+        <h2 style="align-content: center;"> - Where Every Detail Defines Perfection.</h2>
+    </div>
+
+
+</div>
+
+
+
+<!-- <div class="parallax img2"> -->
+    
+<div id="services" class="services-section">
+    <video autoplay muted loop playsinline class="bg-video">
+        <source src="public/wash.mp4" type="video/mp4">
+    </video>
+    <div class="services-overlay"></div>
+
+    <div class="services-content">
+        <h2>Our Services</h2>
+        <div class="services-grid">
+            <div>Exterior Detailing</div>
+            <div>Interior Deep Cleaning</div>
+            <div>Ceramic Coating</div>
+            <div>Paint Protection Film (PPF)</div>
+            <div>Paint Correction</div>
+            <div>Engine Bay Detailing</div>
+            <div>Headlight Restoration</div>
+            <div>Alloy & Tyre Detailing</div>
+            <div>Glass Coating</div>
+        </div>
+    </div>
+</div>
+
+<!-- </div> -->
+
+<div id="about" class="about-section">
+    <div class="about-overlay"></div>
+
+    <div class="about-content">
+        <h2>About Us</h2>
+        <p class="about-tagline">Driven by Precision. Defined by Passion.</p>
+
+        <div class="about-text">
+            <p>
+                At Car Detailing Studio, we specialize in restoring, protecting, and enhancing your vehicle’s true beauty.
+                Using professional-grade tools, advanced coatings, and expert techniques, we deliver showroom-level perfection
+                for every car we touch.
+            </p>
+            <p>
+                From luxury sedans to supercars, our mission is simple — to provide uncompromising quality, attention to detail,
+                and long-lasting protection that elevates your driving experience.
+            </p>
+        </div>
+    </div>
+</div>
+
+<footer id="contact" class="site-footer">
+    <div class="footer-content">
+        <div class="footer-col">
+            <h3>Detailing Studio</h3>
+            <p>Where Every Detail Defines Perfection.</p>
+        </div>
+
+        <div class="footer-col">
+            <h4>Services</h4>
+            <ul>
+                <li>Ceramic Coating</li>
+                <li>Paint Protection Film</li>
+                <li>Interior Detailing</li>
+                <li>Paint Correction</li>
+            </ul>
+        </div>
+
+        <div class="footer-col">
+            <h4>Contact</h4>
+            <p>Email: detailingstudio@gmail.com</p>
+            <p>Phone: +91 9XXXXXXXXX</p>
+            <p>Location: Hyderabad, India</p>
+        </div>
+    </div>
+
+    <div class="footer-bottom">
+        © 2026 Detailing Studio. All Rights Reserved.
+    </div>
+</footer>
+
+
+<script>
+window.addEventListener("scroll", () => {
+    const car = document.getElementById("car");
+    const scroll = window.scrollY;
+    const moveX = Math.min(scroll * 2.2, window.innerWidth);
+    car.style.transform = `translate(${moveX}px, -20%)`;
+});
+
+const serviceItems = document.querySelectorAll('.services-grid div');
+
+window.addEventListener('scroll', () => {
+    const trigger = window.innerHeight * 0.85;
+
+    serviceItems.forEach(item => {
+        const top = item.getBoundingClientRect().top;
+        if (top < trigger) {
+            item.classList.add('show');
+        }
+    });
+});
+const about = document.querySelector('.about-content');
+
+window.addEventListener('scroll', () => {
+    const trigger = window.innerHeight * 0.7;
+    if (about.getBoundingClientRect().top < trigger) {
+        about.classList.add('show');
+    }
+});
+</script>
+
+
+</body>
+</html>
