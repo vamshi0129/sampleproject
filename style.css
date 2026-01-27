@@ -295,3 +295,81 @@ nav ul li a:hover {
     font-size: 0.85rem;
     letter-spacing: 1px;
 }
+/* ---------- Responsive Fixes ---------- */
+
+/* Fluid Typography */
+.hero-text {
+    font-size: clamp(2.5rem, 6vw, 8rem);
+    letter-spacing: clamp(4px, 1vw, 15px);
+}
+
+/* Car Scaling */
+.car {
+    width: min(90%, 900px);
+}
+
+/* Services Grid Responsive */
+.services-grid {
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    max-width: 90%;
+}
+
+/* Footer Responsive */
+.footer-content {
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+}
+
+/* Navbar Mobile */
+@media (max-width: 768px) {
+    nav {
+        padding: 12px 20px;
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    nav ul {
+        gap: 15px;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .hero-text {
+        top: 40%;
+        text-align: center;
+    }
+
+    .services-content h2 {
+        font-size: clamp(2rem, 6vw, 4rem);
+    }
+
+    .about-content h2 {
+        font-size: clamp(1.8rem, 5vw, 3rem);
+    }
+}
+
+/* Small Phones */
+@media (max-width: 480px) {
+    .hero-text {
+        letter-spacing: 4px;
+    }
+
+    .content {
+        padding: 60px 8%;
+    }
+
+    .services-grid div {
+        font-size: 1rem;
+        padding: 18px;
+    }
+}
+
+/* Ultra-wide Screens */
+@media (min-width: 1600px) {
+    .hero-text {
+        font-size: 9rem;
+    }
+
+    .services-content h2 {
+        font-size: 6rem;
+    }
+}
